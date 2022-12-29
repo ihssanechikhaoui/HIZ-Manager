@@ -1,5 +1,51 @@
 package Controllers;
 
-public class AddClientController {
+import java.io.IOException;
+import Models.Client;
+import dao.ClientDaoImplementation;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class AddClientController  {
+	
+	@FXML
+    private TextField textFieldName;
+
+    @FXML
+    private TextField textFieldMail;
+
+    @FXML
+    private TextField textFieldCIN;
+
+    @FXML
+    private TextField textFieldPhoneNum;
+
+    @FXML
+    private Button idAdd;
+
+    @FXML
+    private Button idCancel;
+   
+    @FXML
+    void ActionAddClient(ActionEvent event) throws IOException {
+    	 String url="/Interfaces/";
+    	    if(event.getSource()==idAdd) {
+//    	    	Client client = new Client();
+    	    	ClientController.getCilentDao().addClient(new Client(textFieldCIN.getText(),ClientDaoImplementation.getClients().size()+1,textFieldMail.getText(),textFieldName.getText(),textFieldPhoneNum.getText()));
+    	    	url+="Manage Client.fxml";
+      	    	 ((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));	
+    	    }else if(event.getSource()==idCancel) {
+    	    	
+    	    	url+="Manage Client.fxml";
+    	    	 ((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));
+    	    }	
+    	   
+    }	
 }

@@ -15,5 +15,10 @@ public class Client extends Personne {
 	public void setCIN(String cIN) {
 		CIN = cIN;
 	}
+
+	public Client(String cIN,int iD, String email, String name, String phoneNum) {
+		super(iD,email,name,phoneNum);
+		CIN = cIN;
+	}
     
 }

@@ -20,6 +20,16 @@ public class Personne {
 	public String getName() {
 		return Name;
 	}
+	public Personne() {
+		super();
+	}
+	public Personne(int iD, String email, String name, String phoneNum) {
+		super();
+		ID = iD;
+		Email = email;
+		Name = name;
+		PhoneNum = phoneNum;
+	}
 	public void setName(String name) {
 		Name = name;
 	}
