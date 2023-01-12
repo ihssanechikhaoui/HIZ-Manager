@@ -116,7 +116,7 @@
                            </color>
                         </DropShadow>
                      </effect></Button>
-                  <Button fx:id="idModify" disable="true" layoutX="184.0" layoutY="47.0" mnemonicParsing="false" onAction="#ActionClientController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
+                  <Button fx:id="idModify" layoutX="184.0" layoutY="47.0" mnemonicParsing="false" onAction="#ActionClientController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -127,7 +127,7 @@
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor></Button>
-                  <Button fx:id="idSuppim" layoutX="273.0" layoutY="47.0" mnemonicParsing="false" onAction="#ActionClientController" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: black;">
+                  <Button fx:id="idSupprim" layoutX="273.0" layoutY="47.0" mnemonicParsing="false" onAction="#ActionClientController" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: black;">
                      <effect>
                         <DropShadow>
                            <color>

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import Models.Client;
 import dao.ClientDaoImplementation;
 import javafx.event.ActionEvent;
@@ -37,7 +36,7 @@ public class ClientController implements Initializable{
     private TableColumn<Client, Integer> idClient;
 
     public ClientDaoImplementation getCilentDao() {
-		return CilentDao;
+		return ClientDao;
 	}
 	
 
@@ -53,20 +52,14 @@ public class ClientController implements Initializable{
     @FXML
     private TableColumn<Client, String> idCin;
   
-    private  ClientDaoImplementation CilentDao =new ClientDaoImplementation();
+    private  ClientDaoImplementation ClientDao =new ClientDaoImplementation();
     public TableView<Client> getTableClient() {
 		return tableClient;
 	}
 	public void setTableClient(TableView<Client> tableClient) {
 		this.tableClient = tableClient;
 	}
-//	public static ClientDaoImplementation getCilentDao() {
-//		return CilentDao;
-//	}
-//	protected List<Client> getClientList() {
-//		System.out.println(ClientDaoImplementation.getClients().toString());
-//			return ClientDaoImplementation.getClients();
-//	}
+
 	public void ActionClientController(ActionEvent event) throws IOException, SQLException {
 //		event.getSource()
 		String url="/Interfaces/";
@@ -93,7 +86,7 @@ public class ClientController implements Initializable{
  			 thisStage.close();
    			
   			 Parent root = FXMLLoader.load(getClass().getResource(url));
-  			 thisStage.setUserData(CilentDao);
+  			 thisStage.setUserData(ClientDao);
   			 
   				Scene scene = new Scene(root);
   				thisStage.setScene(scene);
@@ -104,12 +97,33 @@ public class ClientController implements Initializable{
    	    	url+="CreateEventArea.fxml";
  
 	    }else if(event.getSource()==idSupprim) {
-   	    	System.out.println("Client deleted");
-   	    	//url+="AddClient.fxml";
- 
+   	    	url+="DeleteItemMessage.fxml";
+   	    	ClientDao.setClt(tableClient.getSelectionModel().getSelectedItem());
+   	    	Node node = (Node) event.getSource();
+			 Stage thisStage = (Stage) node.getScene().getWindow();
+			 thisStage.close();
+ 			 Parent root = FXMLLoader.load(getClass().getResource(url));
+ 			 thisStage.setUserData(ClientDao);
+ 				Scene scene = new Scene(root);
+ 				thisStage.setScene(scene);
+ 				thisStage.show();
+   	    	
+   	    	
 	    }else if(event.getSource()==idModify) {
    	    	System.out.println("Client modified");
-   	    	//url+="AddClient.fxml";
+   	    	url+="UpdateClient.fxml";
+   	    	ClientDao.setClt(tableClient.getSelectionModel().getSelectedItem());
+   	    	System.out.println(ClientDao.getClt());
+   	    	Node node = (Node) event.getSource();
+			 Stage thisStage = (Stage) node.getScene().getWindow();
+			 thisStage.close();
+ 			 Parent root = FXMLLoader.load(getClass().getResource(url));
+ 			 thisStage.setUserData(ClientDao);
+ 				Scene scene = new Scene(root);
+ 				thisStage.setScene(scene);
+ 				thisStage.show();
+   	    	
+   	    	
  
 	    }
 		if(event.getSource()!=idModify &&event.getSource()!=idSupprim && event.getSource()!=idAdd) {
@@ -127,7 +141,7 @@ public class ClientController implements Initializable{
 		 idCin.setCellValueFactory(new PropertyValueFactory<Client, String>("CIN"));
 		 
 		 try {
-			tableClient.getItems().setAll(CilentDao.getAllClients());
+			tableClient.getItems().setAll(ClientDao.getAllClients());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
