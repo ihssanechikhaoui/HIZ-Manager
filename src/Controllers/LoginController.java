@@ -25,27 +25,25 @@ public class LoginController {
      
       public void ActionLogin(ActionEvent event) throws SQLException, IOException {
     	  System.out.println("btn clicked");
-    	  labelHint.setText("Hint password is : jhgfduj");
     	  String username = textFieldUsername.getText();
     	  String password = textFieldPassword.getText();
     	  user = new UserDaoImplementation();
        	  User user1 = user.getUser(username);
     	  if(user1 != null){
     		  if(user1.getPassword().equals(password)) {
-    			  System.out.println("connexion avec succée");
-  	    		((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource("/Interfaces/Home.fxml"))));
+	    		System.out.println("connexion avec succée");
+	    		user.isOnline(user1);
+	    		((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource("/Interfaces/Home.fxml"))));
+	    		
     		  }else {
     			  System.out.println("incorrect psw");
-    			  labelHint.setText(" Incorrect Password.\n Hint password is : " +user1.getHintPassword());
-    			 // labelHint.setFont(new Font ("Arial","23"))
+    			  labelHint.setText("Incorrect Password\nHint password is : "+user1.getHintPassword());
+    			 
     		  }
-	    		
-	    		
-	    		
 	    		
 	    	}else {
 	    		System.out.println("identifiant incorrect");
-	    		 labelHint.setText(" Username doesn't exist " );
+	    		labelHint.setText("Username doesn't exist");
 	    	}
     	  
       }

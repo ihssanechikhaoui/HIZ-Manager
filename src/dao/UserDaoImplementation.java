@@ -84,4 +84,18 @@ public class UserDaoImplementation implements  UserDao{
 		else	return null;
 	}
 
+	@Override
+	public void isOnline(User user) throws SQLException {
+		String query = "update user set isOnline=? "
+		          + " where Username = ?";
+				PreparedStatement ps
+					= connection.prepareStatement(query);
+				
+				ps.setBoolean(1, user.getIsOnline());
+				ps.setString(2, user.getUsername());
+				ps.executeUpdate();
+				System.out.println("User is online**");
+		
+	}
+
 }

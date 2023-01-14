@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="550.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProviderController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#ShowData" prefHeight="280.0" prefWidth="550.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifyProviderController">
    <children>
       <Label layoutX="14.0" layoutY="84.0" prefHeight="38.0" prefWidth="91.0" text="Name :" textFill="WHITE">
          <font>
@@ -28,14 +28,14 @@
       <TextField fx:id="idName" layoutX="77.0" layoutY="91.0" prefHeight="25.0" prefWidth="166.0" />
       <TextField fx:id="idEmail" layoutX="77.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" />
       <TextField fx:id="idPhoneNum" layoutX="370.0" layoutY="91.0" prefHeight="25.0" prefWidth="166.0" />
-      <Button fx:id="idAdd" layoutX="319.0" layoutY="219.0" mnemonicParsing="false" onAction="#AddProviderAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
+      <Button fx:id="idModify" layoutX="319.0" layoutY="219.0" mnemonicParsing="false" onAction="#ModifyProviderAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Modify" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
          <effect>
             <DropShadow color="#f0c4f7" />
          </effect></Button>
-      <Button fx:id="idCancel" layoutX="445.0" layoutY="219.0" mnemonicParsing="false" onAction="#AddProviderAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Cancel" textFill="WHITE">
+      <Button fx:id="idCancel" layoutX="445.0" layoutY="219.0" mnemonicParsing="false" onAction="#ModifyProviderAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
@@ -47,14 +47,14 @@
             <DropShadow />
          </effect>
          <children>
-            <Label text="Add Providers :" textFill="#f4f0f0" translateX="70.0" translateY="13.0">
+            <Label text="Update Provider :" textFill="#f4f0f0" translateX="70.0" translateY="13.0">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <ComboBox fx:id="idLevel" layoutX="369.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" promptText="Choose One Level" />
+      <ComboBox fx:id="idLevel" layoutX="369.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" promptText="choose one level" />
       <Label layoutX="262.0" layoutY="145.0" prefHeight="25.0" prefWidth="102.0" text="Provider Level" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -62,7 +62,7 @@
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="119.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/plus.png" />
+            <Image url="@../Images/pencil.png" />
          </image>
       </ImageView>
    </children>

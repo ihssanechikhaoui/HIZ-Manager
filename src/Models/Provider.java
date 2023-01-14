@@ -1,17 +1,31 @@
 package Models;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Provider extends Personne{
   
   
-	private ProviderLevel levelOfProvider;
+	private SimpleStringProperty levelOfProvider = new SimpleStringProperty();
 
-	public ProviderLevel getLevelOfProvider() {
+	public SimpleStringProperty getLevelOfProviderProperty() {
 		return levelOfProvider;
 	}
-
-	public void setLevelOfProvider(ProviderLevel levelOfProvider) {
-		this.levelOfProvider = levelOfProvider;
+	public String getLevelOfProvider() {
+		return levelOfProvider.get();
 	}
+
+	public void setLevelOfProvider(String levelOfProvider) {
+		this.levelOfProvider.set(levelOfProvider); 
+	}
+	public Provider(String name, String email , String PhoneNum,String levelOfProvider) {
+		super(email,name,PhoneNum);
+		this.levelOfProvider.set(levelOfProvider);;
+	}
+	public Provider() {
+		super();
+	}
+
+	
 	
 
 

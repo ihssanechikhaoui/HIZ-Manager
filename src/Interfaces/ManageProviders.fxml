@@ -14,7 +14,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderController">
    <children>
       <HBox prefHeight="60.0" prefWidth="716.0" style="-fx-background-color: black;">
          <effect>
@@ -80,20 +80,20 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #35034F;">
                <children>
-                  <TableView fx:id="tableid" layoutY="157.0" prefHeight="238.0" prefWidth="498.0">
+                  <TableView fx:id="tableProvider" layoutY="157.0" prefHeight="238.0" prefWidth="498.0">
                     <columns>
-                      <TableColumn fx:id="idProvider" prefWidth="45.0" text="ID" />
-                      <TableColumn fx:id="namecolumn" prefWidth="105.0" text="Name" />
-                        <TableColumn fx:id="emailcolumn" prefWidth="123.0" text="E-mail" />
-                        <TableColumn fx:id="numbercolumn" prefWidth="127.6666259765625" text="Phone Number" />
-                        <TableColumn fx:id="levelcolumn" prefWidth="96.0" text="Provider Level" />
+                      <TableColumn fx:id="idProv" prefWidth="45.0" text="ID" />
+                      <TableColumn fx:id="nameProv" prefWidth="105.0" text="Name" />
+                        <TableColumn fx:id="emailProv" prefWidth="123.0" text="E-mail" />
+                        <TableColumn fx:id="PhoneNumProv" prefWidth="127.6666259765625" text="Phone Number" />
+                        <TableColumn fx:id="levelProv" prefWidth="96.0" text="Provider Level" />
                     </columns>
                   </TableView>
                   <Button fx:id="idAdd" layoutX="110.0" layoutY="44.0" mnemonicParsing="false" onAction="#ActionProviderController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -102,7 +102,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -111,7 +111,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>

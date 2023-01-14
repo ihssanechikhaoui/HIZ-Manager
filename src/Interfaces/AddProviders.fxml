@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="550.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="550.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProviderController">
    <children>
       <Label layoutX="14.0" layoutY="84.0" prefHeight="38.0" prefWidth="91.0" text="Name :" textFill="WHITE">
          <font>
@@ -25,17 +25,17 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <TextField layoutX="77.0" layoutY="91.0" prefHeight="25.0" prefWidth="166.0" />
-      <TextField layoutX="77.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" />
-      <TextField layoutX="370.0" layoutY="91.0" prefHeight="25.0" prefWidth="166.0" />
-      <Button layoutX="319.0" layoutY="219.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
+      <TextField fx:id="idName" layoutX="77.0" layoutY="91.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="idEmail" layoutX="77.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="idPhoneNum" layoutX="370.0" layoutY="91.0" prefHeight="25.0" prefWidth="166.0" />
+      <Button fx:id="idAdd" layoutX="319.0" layoutY="219.0" mnemonicParsing="false" onAction="#AddProviderAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
          <effect>
             <DropShadow color="#f0c4f7" />
          </effect></Button>
-      <Button layoutX="445.0" layoutY="219.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Cancel" textFill="WHITE">
+      <Button fx:id="idCancel" layoutX="445.0" layoutY="219.0" mnemonicParsing="false" onAction="#AddProviderAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: black;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
@@ -54,7 +54,7 @@
             </Label>
          </children>
       </HBox>
-      <ComboBox layoutX="369.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" />
+      <ComboBox fx:id="idLevel" layoutX="369.0" layoutY="145.0" prefHeight="25.0" prefWidth="166.0" promptText="Choose One Level" />
       <Label layoutX="262.0" layoutY="145.0" prefHeight="25.0" prefWidth="102.0" text="Provider Level" textFill="WHITE">
          <font>
             <Font size="14.0" />
