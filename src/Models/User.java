@@ -12,7 +12,7 @@ public class User extends Personne implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -8608283269779295105L;
-	private SimpleIntegerProperty id= new SimpleIntegerProperty();
+	
 	
 	private SimpleStringProperty HintPassword  = new SimpleStringProperty() ;
     private SimpleStringProperty Password = new SimpleStringProperty() ;
@@ -22,9 +22,7 @@ public class User extends Personne implements Serializable{
     
     //ID
     
-    public int getId() {
-		return id.get();
-	}
+   
 	public SimpleBooleanProperty getIsOnlineProperty() {
 		return isOnline;
 	}
@@ -48,12 +46,7 @@ public class User extends Personne implements Serializable{
 		isOnline.set(false);
 		
 	}
-	public void setId(int id) {
-		this.id.set(id);
-	}
-	public SimpleIntegerProperty getIdProperty() {
-		return id;
-	}
+	
 	
 
 	

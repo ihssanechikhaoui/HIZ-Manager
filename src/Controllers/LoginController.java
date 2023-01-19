@@ -21,20 +21,42 @@ public class LoginController {
       @FXML private TextField textFieldUsername;
       @FXML private PasswordField textFieldPassword;
       @FXML private Label labelHint;     
-      private UserDaoImplementation user ;
+      private static UserDaoImplementation user ;
+      private  User user1;
      
-      public void ActionLogin(ActionEvent event) throws SQLException, IOException {
+      public static UserDaoImplementation getUser() {
+		return user;
+	}
+	
+	public User getUser1() {
+		return user1;
+	}
+
+	public void setUser1(User user1) {
+		this.user1 = user1;
+	}
+
+	public void ActionLogin(ActionEvent event) throws SQLException, IOException {
     	  System.out.println("btn clicked");
     	  String username = textFieldUsername.getText();
     	  String password = textFieldPassword.getText();
+    	  System.out.println(username);
     	  user = new UserDaoImplementation();
-       	  User user1 = user.getUser(username);
+       	  user1 = user.getUser(username);
     	  if(user1 != null){
-    		  if(user1.getPassword().equals(password)) {
+    		  if(user1.getPassword().compareTo(password)==0) {
 	    		System.out.println("connexion avec succée");
+	    		System.out.println(user1.getIsOnline());
+	    		user1.setIsOnline(true);
 	    		user.isOnline(user1);
-	    		((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource("/Interfaces/Home.fxml"))));
-	    		
+	    		 Node node = (Node) event.getSource();
+				 Stage thisStage = (Stage) node.getScene().getWindow();
+	 			 thisStage.close();
+	  			 thisStage.setUserData(user1);
+	  			 Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Home.fxml"));
+  			     Scene scene = new Scene(root);
+  		      	 thisStage.setScene(scene);
+  		     	 thisStage.show();	
     		  }else {
     			  System.out.println("incorrect psw");
     			  labelHint.setText("Incorrect Password\nHint password is : "+user1.getHintPassword());
@@ -51,11 +73,10 @@ public class LoginController {
     	  System.out.println("Create ACcount");
     	  Node node = (Node) event.getSource();
  		  Stage thisStage = (Stage) node.getScene().getWindow();
- 		
- 		 Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Registration.fxml"));
- 			Scene scene = new Scene(root);
+ 		  Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Registration.fxml"));
+ 		  Scene scene = new Scene(root);
 // 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
- 			thisStage.setScene(scene);
+ 		  thisStage.setScene(scene);
       }
       
 }
