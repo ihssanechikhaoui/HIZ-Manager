@@ -1,6 +1,8 @@
 package Models;
 
 
+
+
 import javafx.beans.property.SimpleStringProperty;
 
 public class Client extends Personne {

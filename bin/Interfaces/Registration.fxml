@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegistrationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegistrationController">
    <children>
       <VBox layoutX="180.0" layoutY="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="694.0" style="-fx-background-color: #35034F;" translateX="-180.0">
          <children>
@@ -58,13 +58,14 @@
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Label>
+            <Label text="Label" />
          </children>
       </VBox>
       <Button layoutX="579.0" layoutY="382.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ActionRegistration" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: BLACK;" text="Register" textFill="WHITE" translateY="9.0">
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color>
             </DropShadow>
          </effect>
@@ -88,11 +89,11 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="449.0" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ActionBack" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: BLACK;" text="Back" textFill="WHITE">
+      <Button layoutX="458.0" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ActionBack" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: BLACK;" text="Back" textFill="WHITE">
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color>
             </DropShadow>
          </effect>
@@ -100,7 +101,7 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Button>
-      <Label fx:id="labelHint" layoutX="337.0" layoutY="350.0" prefHeight="38.0" prefWidth="338.0" textFill="WHITE">
+      <Label fx:id="labelHint" layoutX="324.0" layoutY="346.0" prefHeight="25.0" prefWidth="345.0" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>

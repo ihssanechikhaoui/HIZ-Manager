@@ -1,6 +1,5 @@
 package dao;
 
-
 import java.sql.SQLException;
 
 import Models.Provider;
@@ -11,6 +10,4 @@ public interface ProviderDao {
 	public void addProvider(Provider prv) throws SQLException;
 	public void updateProvider(Provider prv) throws SQLException;
 	public void deleteProvider(Provider prv) throws SQLException;
-	
-
-}
+} 

@@ -18,6 +18,13 @@ public class MainController {
 	@FXML private Button idProvider;
 	@FXML private Button idParty;
 	@FXML private Button idSkip;
+	
+	
+	
+	
+	
+	
+	
 	 public void ActionBuildWork(ActionEvent event) throws IOException {
 		 String url="/Interfaces/";
 	   	    if(event.getSource()==idSkip) {

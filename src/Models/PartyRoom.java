@@ -11,7 +11,7 @@ public class PartyRoom {
 	private SimpleStringProperty Address= new SimpleStringProperty();
 	private SimpleStringProperty name= new SimpleStringProperty();
 	private SimpleDoubleProperty budgetRoom= new SimpleDoubleProperty();
-	public String x;
+	
 	
 
 	

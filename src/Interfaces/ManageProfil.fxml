@@ -14,7 +14,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProfilController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProfilController">
    <children>
       <HBox prefHeight="60.0" prefWidth="716.0" style="-fx-background-color: black;">
          <effect>
@@ -31,8 +31,6 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Log out" textFill="WHITE" translateX="380.0" translateY="17.0" />
-            <Button mnemonicParsing="false" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: gray; -fx-background-color: #B2D6;" text="?" textFill="#f2f2f2" translateX="400.0" translateY="15.0" />
          </children>
       </HBox>
       <SplitPane dividerPositions="0.29797979797979796" layoutY="60.0" prefHeight="397.0" prefWidth="716.0">
@@ -43,7 +41,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect></Button>
@@ -54,7 +52,7 @@
                      <effect>
                         <DropShadow height="49.07" radius="11.7675" width="0.0">
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect></Button>
@@ -96,12 +94,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color red="1.0" green="0.30588236451148987" blue="0.7098039388656616" />
+                                    <Color blue="0.7098039388656616" green="0.30588236451148987" red="1.0" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="0.7837374806404114" green="0.11395711451768875" blue="0.8315789699554443" />
+                                    <Color blue="0.8315789699554443" green="0.11395711451768875" red="0.7837374806404114" />
                                  </color>
                               </Stop>
                            </stops>
@@ -110,7 +108,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect></Button>
@@ -120,12 +118,12 @@
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color red="1.0" green="0.30588236451148987" blue="0.7098039388656616" />
+                                    <Color blue="0.7098039388656616" green="0.30588236451148987" red="1.0" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="0.7837374806404114" green="0.11395711451768875" blue="0.8315789699554443" />
+                                    <Color blue="0.8315789699554443" green="0.11395711451768875" red="0.7837374806404114" />
                                  </color>
                               </Stop>
                            </stops>
@@ -134,11 +132,11 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect></Button>
-                  <ImageView fitHeight="132.0" fitWidth="148.0" layoutX="60.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="117.0" fitWidth="139.0" layoutX="60.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fitHeight="125.0" fitWidth="117.0" layoutX="76.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/identity-card.png" />

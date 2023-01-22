@@ -13,9 +13,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="458.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+<AnchorPane prefHeight="458.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
    <children>
-      <VBox layoutX="116.0" layoutY="114.0" prefHeight="274.0" prefWidth="500.0" style="-fx-background-color: #35034F;">
+      <VBox layoutX="88.0" layoutY="114.0" prefHeight="262.0" prefWidth="526.0" style="-fx-background-color: #35034F;">
          <children>
             <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" text="Username" textFill="WHITE" translateX="50.0" translateY="50.0">
                <font>
@@ -28,28 +28,17 @@
                </font></Label>
             <Label translateX="230.0" translateY="60.0" />
             <PasswordField fx:id="textFieldPassword" layoutX="100.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="225.0" promptText="***************" translateX="180.0" translateY="25.0" />
-            <Label fx:id="labelHint" prefHeight="57.0" prefWidth="228.0" textFill="WHITE" translateX="180.0" translateY="50.0">
+            <Label fx:id="labelHint" prefHeight="79.0" prefWidth="328.0" textFill="WHITE" translateX="180.0" translateY="50.0">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font></Label>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ActionLogin" prefHeight="29.0" prefWidth="82.0" style="-fx-background-color: black;" text="Login" textFill="#fffefe" translateX="210.0" translateY="95.0">
-               <font>
-                  <Font name="Arial Black" size="12.0" />
-               </font>
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
-                     </color>
-                  </DropShadow>
-               </effect></Button>
          </children>
       </VBox>
-      <Button layoutX="513.0" layoutY="389.0" mnemonicParsing="false" onAction="#ActionCreateAccount" prefHeight="38.0" prefWidth="113.0" style="-fx-background-color: black;" text="Create an account" textFill="WHITE">
+      <Button layoutX="580.0" layoutY="408.0" mnemonicParsing="false" onAction="#ActionCreateAccount" prefHeight="38.0" prefWidth="113.0" style="-fx-background-color: black;" text="Create an account" textFill="WHITE">
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color>
             </DropShadow>
          </effect></Button>
@@ -67,5 +56,17 @@
             </Label>
          </children>
       </HBox>
+      <Button layoutX="304.0" layoutY="385.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ActionLogin" prefHeight="29.0" prefWidth="82.0" style="-fx-background-color: black;" text="Login" textFill="#fffefe">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

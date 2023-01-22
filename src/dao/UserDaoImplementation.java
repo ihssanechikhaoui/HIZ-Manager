@@ -77,6 +77,7 @@ public class UserDaoImplementation implements  UserDao{
 		user.setPassword(rs.getString("Password"));
 		user.setUsername(rs.getString("Username"));
 		user.setID(rs.getInt("idUser"));
+		System.out.println(rs.getInt("idUser"));
 		}
 		if (check) {
 			return user;

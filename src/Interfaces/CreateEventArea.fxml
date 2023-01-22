@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EventAreaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClientEventAreaController">
    <children>
       <HBox prefHeight="60.0" prefWidth="716.0" style="-fx-background-color: black;">
          <effect>
@@ -29,41 +29,43 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Button fx:id="idBack" mnemonicParsing="false" onAction="#ActionAddEventController" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Go back" textFill="WHITE" translateX="400.0" translateY="15.0" />
+            <Button fx:id="GoBack" mnemonicParsing="false" onAction="#ActionClientEventAreaController" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Go back" textFill="WHITE" translateX="400.0" translateY="15.0" />
          </children>
       </HBox>
-      <TableView layoutY="212.0" prefHeight="189.0" prefWidth="716.0">
+      <TableView fx:id="tableEvent" layoutY="212.0" prefHeight="189.0" prefWidth="716.0">
          <columns>
-            <TableColumn prefWidth="40.79998856782913" text="ID" />
-            <TableColumn prefWidth="109.60000228881836" text="Date Event" />
-            <TableColumn prefWidth="115.20002746582031" text="Party Room" />
-            <TableColumn prefWidth="128.79998779296875" text="Nbr Guests" />
-            <TableColumn prefWidth="110.4000244140625" text="Budget" />
-            <TableColumn prefWidth="122.4000244140625" text="Event Type" />
-            <TableColumn prefWidth="100.79998779296875" text="Eat Stuff" />
+            <TableColumn fx:id="idEvent" prefWidth="29.333313584327698" text="ID" />
+            <TableColumn fx:id="eventType" prefWidth="68.33334350585938" text="Event Type" />
+            <TableColumn fx:id="startDate" prefWidth="134.66668701171875" text="Start Date" />
+            <TableColumn fx:id="endDate" prefWidth="127.33331298828125" text="End Date" />
+            <TableColumn fx:id="NumGuests" prefWidth="61.3333740234375" text="N°Guests" />
+            <TableColumn fx:id="idBudget" prefWidth="62.6666259765625" text="id Budget " />
+            <TableColumn fx:id="idParty" prefWidth="81.33331298828125" text="idPartyRoom" />
+            <TableColumn fx:id="idProvider" prefWidth="68.0" text="idProvider" />
+            <TableColumn fx:id="moreDetails" prefWidth="99.3333740234375" text="More Details" />
          </columns>
       </TableView>
-      <Button fx:id="idAdd" layoutX="135.0" layoutY="115.0" mnemonicParsing="false" onAction="#ActionAddEventController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
+      <Button fx:id="idAdd" layoutX="135.0" layoutY="115.0" mnemonicParsing="false" onAction="#ActionClientEventAreaController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color>
             </DropShadow>
          </effect></Button>
-      <Button fx:id="idMoodify" layoutX="321.0" layoutY="120.0" mnemonicParsing="false" onAction="#ActionAddEventController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
+      <Button fx:id="idModify" layoutX="321.0" layoutY="120.0" mnemonicParsing="false" onAction="#ActionClientEventAreaController" prefHeight="49.0" prefWidth="50.0" style="-fx-background-color: black;">
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color>
             </DropShadow>
          </effect></Button>
-      <Button fx:id="idSupprim" layoutX="495.0" layoutY="120.0" mnemonicParsing="false" onAction="#ActionAddEventController" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: black;">
+      <Button fx:id="idSupprim" layoutX="495.0" layoutY="120.0" mnemonicParsing="false" onAction="#ActionClientEventAreaController" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: black;">
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color>
             </DropShadow>
          </effect></Button>

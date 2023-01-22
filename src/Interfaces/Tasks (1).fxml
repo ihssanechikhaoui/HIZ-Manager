@@ -48,9 +48,9 @@
          </effect></Button>
       <TableView layoutX="319.0" layoutY="76.0" prefHeight="200.0" prefWidth="316.0">
         <columns>
-          <TableColumn prefWidth="135.0" text="Title" />
-          <TableColumn prefWidth="68.0" text="completed" />
-            <TableColumn prefWidth="111.66668701171875" text="Date" />
+          <TableColumn prefWidth="187.0" text="Title" />
+            <TableColumn prefWidth="62.0" text="Date" />
+          <TableColumn prefWidth="66.0" text="completed" />
         </columns>
       </TableView>
       <DatePicker fx:id="idDate" layoutX="31.0" layoutY="202.0" promptText="Task Date" />

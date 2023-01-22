@@ -89,7 +89,7 @@ public class PersonalInformationController {
 	    void ShowData(MouseEvent event) {
 		 if(counter==0) {
 		Stage thisStage = (Stage)( (Node) event.getSource()).getScene().getWindow();
-  	     user =(User)thisStage.getUserData();
+  	     user =LoginController.getUser1();
   	     idTextFieldName.setText(user.getName());
   	     idTextFieldEmail.setText(user.getEmail());
   	     idTextFieldPassword.setText(user.getPassword());

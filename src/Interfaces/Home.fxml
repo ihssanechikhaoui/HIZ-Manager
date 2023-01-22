@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" style="-fx-background-color: #35034F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomeController">
    <children>
       <HBox prefHeight="60.0" prefWidth="716.0" style="-fx-background-color: black;">
          <children>
@@ -27,13 +27,13 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: gray; -fx-background-color: #B2D6;" text="?" textFill="#f2f2f2" translateX="570.0" translateY="15.0" />
-            <Button mnemonicParsing="false" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Log out" textFill="WHITE" translateX="470.0" translateY="17.0" />
+            <Button fx:id="IdHelp" mnemonicParsing="false" onAction="#ActionHomeController" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: gray; -fx-background-color: #B2D6;" text="?" textFill="#f2f2f2" translateX="570.0" translateY="15.0" />
+            <Button fx:id="idLogOut" mnemonicParsing="false" onAction="#ActionHomeController" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Log out" textFill="WHITE" translateX="470.0" translateY="17.0" />
          </children>
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.021052632480859756" green="0.021052632480859756" blue="0.021052632480859756" />
+                  <Color blue="0.021052632480859756" green="0.021052632480859756" red="0.021052632480859756" />
                </color></DropShadow>
          </effect>
       </HBox>
@@ -44,7 +44,7 @@
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color></DropShadow>
          </effect>
          <textFill>
@@ -52,12 +52,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="1.0" green="0.307407408952713" blue="0.7114197611808777" />
+                        <Color blue="0.7114197611808777" green="0.307407408952713" red="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.6970526576042175" green="0.324210524559021" blue="0.8105263113975525" />
+                        <Color blue="0.8105263113975525" green="0.324210524559021" red="0.6970526576042175" />
                      </color>
                   </Stop>
                </stops>
@@ -71,7 +71,7 @@
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color></DropShadow>
          </effect>
          <textFill>
@@ -79,12 +79,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.9789473414421082" green="0.2211695909500122" blue="0.7642436623573303" />
+                        <Color blue="0.7642436623573303" green="0.2211695909500122" red="0.9789473414421082" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.667550802230835" green="0.3100000023841858" blue="1.0" />
+                        <Color blue="1.0" green="0.3100000023841858" red="0.667550802230835" />
                      </color>
                   </Stop>
                </stops>
@@ -98,7 +98,7 @@
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color></DropShadow>
          </effect>
          <textFill>
@@ -106,12 +106,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="1.0" green="0.307407408952713" blue="0.7114197611808777" />
+                        <Color blue="0.7114197611808777" green="0.307407408952713" red="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.8593013882637024" green="0.3100000023841858" blue="1.0" />
+                        <Color blue="1.0" green="0.3100000023841858" red="0.8593013882637024" />
                      </color>
                   </Stop>
                </stops>
@@ -125,7 +125,7 @@
          <effect>
             <DropShadow>
                <color>
-                  <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                  <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                </color></DropShadow>
          </effect>
          <textFill>
@@ -133,12 +133,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="1.0" green="0.307407408952713" blue="0.7114197611808777" />
+                        <Color blue="0.7114197611808777" green="0.307407408952713" red="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.6970526576042175" green="0.324210524559021" blue="0.8105263113975525" />
+                        <Color blue="0.8105263113975525" green="0.324210524559021" red="0.6970526576042175" />
                      </color>
                   </Stop>
                </stops>

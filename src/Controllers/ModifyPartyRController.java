@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -43,8 +44,27 @@ public class ModifyPartyRController {
  	    if(event.getSource()==idModify) {
  	    	room.setName(idName.getText());
  	    	room.setAddress(idAddress.getText());
- 	    	room.setBudgetRoom(Double.parseDouble(idBudget.getText()));
+ 	    	Double BDG= 0.0;
  	    	
+ 	    	try {
+ 	    		BDG=Double.parseDouble(idBudget.getText());
+ 	    	}catch(java.lang.NumberFormatException e) {
+ 	    		Alert alert = new Alert(Alert.AlertType.ERROR);
+   	   	    	alert.setTitle("Invalid Input ");
+   	   	    	alert.setHeaderText("Invalid input for the field Budget Room");
+   	   	    	alert.setContentText(" Make sure you entered a valid number  ");
+   	   	    	alert.getDialogPane().getStylesheets().add("/application/Alert.css");
+   	   	    	alert.showAndWait();
+ 	    	}
+ 	    	if(BDG<=0) {
+ 	    		Alert alert = new Alert(Alert.AlertType.ERROR);
+   	   	    	alert.setTitle("Invalid Input ");
+   	   	    	alert.setHeaderText("Invalid input for the field Budget Room");
+   	   	    	alert.setContentText(" Make sure you entered a valid number  ");
+   	   	    	alert.getDialogPane().getStylesheets().add("/application/Alert.css");
+   	   	    	alert.showAndWait();
+ 	    	}else {
+ 	    		room.setBudgetRoom(Double.parseDouble(idBudget.getText()));
  	    	Node node = (Node) event.getSource();
 			 Stage thisStage = (Stage) node.getScene().getWindow();
 			((RoomsDaoImplementation)thisStage.getUserData()).updateRooms(room);
@@ -53,7 +73,7 @@ public class ModifyPartyRController {
    		     
  	    	url+="ManagePartyR.fxml";
    	    ((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));
-   	    
+ 	    	}
    	    	 
  	    }else if(event.getSource()==idCancel) {
  	    	

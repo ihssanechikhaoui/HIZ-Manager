@@ -14,7 +14,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PartyRController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PartyRController">
    <children>
       <HBox prefHeight="60.0" prefWidth="716.0" style="-fx-background-color: BLACK;">
          <effect>
@@ -46,7 +46,7 @@
                            <effect>
                               <DropShadow height="28.02" radius="11.754999999999999">
                                  <color>
-                                    <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                                    <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                                  </color>
                               </DropShadow>
                            </effect>
@@ -55,7 +55,7 @@
                            <effect>
                               <DropShadow>
                                  <color>
-                                    <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                                    <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                                  </color>
                               </DropShadow>
                            </effect>
@@ -65,7 +65,7 @@
                            <effect>
                               <DropShadow height="21.88" radius="11.975" spread="0.32" width="28.02">
                                  <color>
-                                    <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                                    <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                                  </color>
                               </DropShadow>
                            </effect>
@@ -97,7 +97,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -123,7 +123,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -132,7 +132,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -141,7 +141,7 @@
                      <effect>
                         <DropShadow>
                            <color>
-                              <Color red="0.9411764740943909" green="0.7686274647712708" blue="0.9686274528503418" />
+                              <Color blue="0.9686274528503418" green="0.7686274647712708" red="0.9411764740943909" />
                            </color>
                         </DropShadow>
                      </effect>
@@ -151,7 +151,7 @@
                         <Image url="@../Images/plus.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="221.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="221.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/pencil.png" />
                      </image>
@@ -165,7 +165,5 @@
             </AnchorPane>
          </items>
       </SplitPane>
-      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Log out" textFill="WHITE" translateX="570.0" translateY="5.0" />
-      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: gray; -fx-background-color: #B2D6;" text="?" textFill="#f2f2f2" translateX="650.0" translateY="5.0" />
    </children>
 </Pane>

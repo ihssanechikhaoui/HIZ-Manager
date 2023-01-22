@@ -22,18 +22,21 @@ public class LoginController {
       @FXML private PasswordField textFieldPassword;
       @FXML private Label labelHint;     
       private static UserDaoImplementation user ;
-      private  User user1;
+      private  static User user1;
      
       public static UserDaoImplementation getUser() {
 		return user;
 	}
+      public static void setUser(UserDaoImplementation use) {
+  		user=use;
+  	}
 	
-	public User getUser1() {
+	public static User getUser1() {
 		return user1;
 	}
 
-	public void setUser1(User user1) {
-		this.user1 = user1;
+	public static void setUser1(User user1) {
+		LoginController.user1 = user1;
 	}
 
 	public void ActionLogin(ActionEvent event) throws SQLException, IOException {

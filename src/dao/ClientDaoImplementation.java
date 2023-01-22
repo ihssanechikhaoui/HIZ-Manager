@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import Controllers.LoginController;
 import Models.Client;
 import application.DataBaseConn;
 import javafx.collections.FXCollections;
@@ -23,7 +25,7 @@ public class ClientDaoImplementation implements ClientDao{
 	static Connection connection = DataBaseConn.getConnection();
 	private Client clt;
 	
-
+    int idClient = LoginController.getUser1().getID();
 	public Client getClt() {
 		return clt;
 	}
@@ -33,17 +35,13 @@ public class ClientDaoImplementation implements ClientDao{
 		this.clt = clt;
 	}
 	ObservableList<Client> Clients;
-	/**
-	 *
-	 * @method:getAllClients 
-	 * @return: an observable list which is the clients attribute 
-	 * This method is used for initializing the tableview by getting all the registered rows from the database 
-	 */
+	
 	@Override
 	public  ObservableList<Client> getAllClients() throws SQLException {
-		 String query = "select * from client";
+		 String query = "select * from client where user_idUser = ?";
 	        PreparedStatement ps
 	            = connection.prepareStatement(query);
+	        ps.setInt(1, idClient);
 	        ResultSet rs = ps.executeQuery();
 	        Clients=FXCollections.observableArrayList();
 	  
@@ -54,7 +52,7 @@ public class ClientDaoImplementation implements ClientDao{
         	client.setPhoneNum(rs.getString("PhoneNum"));
  		    client.setCIN(rs.getString("CIN"));
  		    client.setID(rs.getInt("idClient"));
-	           
+	         
 	            Clients.add(client);
 		
 	}
@@ -67,25 +65,20 @@ public class ClientDaoImplementation implements ClientDao{
 	public ObservableList<Client> getClients() {
 		return Clients;
 	}
-	/**
-	 * 
-	 * AddClient method is used to get information from user input while trying to create a Client on the AddClient controller
-	 * the method's aim is to get the object ,set it's attribute to the prepared statement object and execute the query to add the object
-	 *  on the database we add also the parameter object to the table view so that changes are immediately shown on the table 
-	 * @param: client: it's the parameter taken from the controller part so that all the informations required on the database row are filled from user input
-	 */
+	
 
 	@Override
 	public void addClient(Client client) throws SQLException {
 		String query
         = "insert into client(mail, "
-          + "Name,PhoneNum,CIN) VALUES (?, ?, ?, ?)";
+          + "Name,PhoneNum,CIN,user_idUser) VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setString(1, client.getEmail());
 		ps.setString(2, client.getName());
 		ps.setString(3, client.getPhoneNum());
 		ps.setString(4, client.getCIN());
-		
+		System.out.println(idClient);
+		ps.setInt(5, idClient);
 		ps.executeUpdate();
 		System.out.println("client added");
 		Clients.add(client);	
@@ -113,14 +106,26 @@ public class ClientDaoImplementation implements ClientDao{
 
 	@Override
 	public void deleteClient(Client clt) throws SQLException {
-				String query = "delete from client where idClient =?";
-				PreparedStatement ps = connection.prepareStatement(query);
-				ps.setInt(1, clt.getID());
-				ps.executeUpdate();
-				Clients.remove(Clients.indexOf(clt)) ;
-				System.out.println("Delete client");
+		EventDaoImplementation eventDao = new EventDaoImplementation();
+		eventDao.DelelteAllEventOfClient();
+		// TODO Auto-generated method stub
+		String query = "delete from client where idClient =?";
+		PreparedStatement ps = connection.prepareStatement(query);
+		ps.setInt(1, clt.getID());
+		ps.executeUpdate();
+		Clients.remove(Clients.indexOf(clt)) ;
+	
+		System.out.println("Delelte client");
 		
 	}
+
+
+	@Override
+	public void deleteAllClientOfUser() throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 	

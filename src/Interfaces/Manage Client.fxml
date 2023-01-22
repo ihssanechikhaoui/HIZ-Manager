@@ -167,7 +167,5 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #B2D6; -fx-border-color: gray;" text="Log out" textFill="WHITE" translateX="550.0" translateY="5.0" />
-      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-border-color: gray; -fx-background-color: #B2D6;" text="?" textFill="#f2f2f2" translateX="630.0" translateY="5.0" />
    </children>
 </Pane>

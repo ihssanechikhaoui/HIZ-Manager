@@ -7,6 +7,8 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import Models.PartyRoom;
 import dao.RoomsDaoImplementation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,8 +21,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class PartyRController implements Initializable{
 	 @FXML
@@ -94,6 +98,15 @@ public class PartyRController implements Initializable{
   				thisStage.show();
    	    }
    	 else if(event.getSource()==idModify) {
+   		 System.out.println(tablePartyRooms.getSelectionModel().getSelectedItem());
+   		if(tablePartyRooms.getSelectionModel().getSelectedItem()==null) {
+   			Alert alert = new Alert(Alert.AlertType.WARNING);
+   	    	alert.setTitle("Modification item");
+   	    	alert.setHeaderText("No item selelcted");
+   	    	alert.setContentText("Please select the item you want to modify");
+   	    	alert.getDialogPane().getStylesheets().add("/application/Alert.css");
+   	    	alert.showAndWait();
+   		 }else {
 	    	System.out.println("Modify");
 	    	url+="UpdatePartyR.fxml";
    	    	RoomsDao.setRms(tablePartyRooms.getSelectionModel().getSelectedItem());
@@ -106,8 +119,17 @@ public class PartyRController implements Initializable{
  				Scene scene = new Scene(root);
  				thisStage.setScene(scene);
  				thisStage.show();
+   		 }
 	    }
    	else if(event.getSource()==idSupprim) {
+   		 if(tablePartyRooms.getSelectionModel().getSelectedItem()==null) {
+   			Alert alert = new Alert(Alert.AlertType.WARNING);
+   	    	alert.setTitle("Delete item");
+   	    	alert.setHeaderText("No item selelcted");
+   	    	alert.setContentText("Please select the item you want to delelte");
+   	    	alert.getDialogPane().getStylesheets().add("/application/Alert.css");
+   	    	alert.showAndWait();
+   		 }else {
 	    	System.out.println("Supprim");
 	    	RoomsDao.setRms(tablePartyRooms.getSelectionModel().getSelectedItem());
 	    	Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -124,14 +146,45 @@ public class PartyRController implements Initializable{
    	    	if (result.get() == buttonTypeProceed){
    	    		
    	    		System.out.println("yes");
-   	    		
+   	    		boolean check = true;
+   	    		try {
     			 RoomsDao.deleteRooms(RoomsDao.getRms());
-    			 tablePartyRooms.getItems().setAll(RoomsDao.getAllRooms());
+   	    		}catch(java.sql.SQLIntegrityConstraintViolationException e) {
+  	   	    		check = false; 
+  	   	    	 Alert ERRORDeletion = new Alert(AlertType.ERROR);
+				 ERRORDeletion.setTitle("Item deletion");
+				 ERRORDeletion.setHeaderText("You cannot delete this Item");
+				 ERRORDeletion.setContentText("This Item is Already Assigned to an event  \n created  to procced delelte the event first");
+				 ERRORDeletion.getDialogPane().getStylesheets().add("/application/Alert.css");
+				 ERRORDeletion.show();
+  	   	    		 
+				
+				 
+  	   	    	}
+   	    		if(check) {
+   	    		 tablePartyRooms.getItems().setAll(RoomsDao.getAllRooms());
+				 System.out.println("Item deleted seccesfully ");
+				 Alert seccesfulDeletion = new Alert(AlertType.INFORMATION);
+				 seccesfulDeletion.setTitle("Item deletion");
+				 seccesfulDeletion.setHeaderText("Item Deleltion");
+				 seccesfulDeletion.setContentText("Party Room is Delelted seccesfully");
+				 seccesfulDeletion.getDialogPane().getStylesheets().add("/application/Alert.css");
+				 seccesfulDeletion.show();
+
+             	   Timeline timeline = new Timeline(new KeyFrame(
+   	               Duration.seconds(1.5),
+   	               ae -> seccesfulDeletion.close()));
+   	               timeline.play();
+   	    			
+   	    		}
+   	    	 tablePartyRooms.getItems().setAll(RoomsDao.getAllRooms());
+    			
     			 url+="ManagePartyR.fxml";
     			
    	    	} else {
    	    		
    	    	}
+   		 }
 	    }
    	else if(event.getSource()==idProfil) {
 	    	System.out.println("Profil");

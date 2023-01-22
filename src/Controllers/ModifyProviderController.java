@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import Models.Provider;
-import dao.ClientDaoImplementation;
 import dao.ProviderDaoImplementation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

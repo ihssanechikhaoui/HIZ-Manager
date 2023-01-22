@@ -5,7 +5,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import Models.Provider;
-
 import dao.ProviderDaoImplementation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,15 +47,14 @@ public class AddProviderController implements Initializable {
    	    	provider = new Provider(idName.getText(),idEmail.getText(),idPhoneNum.getText(),idLevel.getSelectionModel().getSelectedItem());
 	    	 Node node = (Node) event.getSource();
  			 Stage thisStage = (Stage) node.getScene().getWindow();
- 			((ProviderDaoImplementation)thisStage.getUserData()).addProvider(provider);	 
+ 			((ProviderDaoImplementation)thisStage.getUserData()).addProvider(provider);	    	
  			url+="ManageProviders.fxml";
  	    ((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));
+   	    	
    	    }else if(event.getSource()==idCancel) {
-   	    	
-   	    	
-   	    	
-   	    	System.out.println("Cancel Addition");
+   	        System.out.println("Cancel Addition");
    	    	url+="ManageProviders.fxml";
+   	       ((Stage)( (Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));
    	    }
 
     }

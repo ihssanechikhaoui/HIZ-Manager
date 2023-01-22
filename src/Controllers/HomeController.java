@@ -3,8 +3,6 @@ package Controllers;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
-
-import Models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +19,7 @@ public class HomeController {
 	@FXML private Button idClients;
 	@FXML private Button idProfil;
 	@FXML private Button idLogOut;
+    @FXML private Button IdHelp;
 	public void ActionHomeController(ActionEvent event) throws IOException, SQLException {
 //		event.getSource()
 		String url="/Interfaces/";
@@ -55,15 +54,15 @@ public class HomeController {
    	    	if (result.get() == buttonTypeProceed){
    	    		url+="Login.fxml";
    	    		System.out.println("yes");
-   	    		Node node = (Node) event.getSource();
-    			 Stage thisStage = (Stage) node.getScene().getWindow();
-    			 ((User)thisStage.getUserData()).setIsOnline(false);
-   	    		(LoginController.getUser()).isOnline((User)thisStage.getUserData());
+    			 (LoginController.getUser1()).setIsOnline(false);
+   	    		(LoginController.getUser()).isOnline(LoginController.getUser1());
    	    		((Stage) ((Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));
    	    		
    	    	} else {
    	    		
    	    	}
+   	    }else if(event.getSource()==IdHelp) {
+   	    	url+="Help.fxml";
    	    }
 		if(event.getSource()!=idLogOut) {
 		((Stage) ((Node) event.getSource()).getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource(url))));

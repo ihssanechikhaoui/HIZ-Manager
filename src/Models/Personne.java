@@ -4,10 +4,10 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Personne {
-    private SimpleIntegerProperty ID = new SimpleIntegerProperty();
-    private SimpleStringProperty Email = new SimpleStringProperty();
-    private SimpleStringProperty  Name = new SimpleStringProperty();
-    private SimpleStringProperty  PhoneNum = new SimpleStringProperty();
+    private SimpleIntegerProperty ID= new SimpleIntegerProperty();
+    private SimpleStringProperty Email = new SimpleStringProperty() ;
+    private SimpleStringProperty  Name= new SimpleStringProperty();
+    private SimpleStringProperty  PhoneNum= new SimpleStringProperty();
 	public int getID() {
 		return ID.get();
 	}
@@ -34,7 +34,6 @@ public class Personne {
 	}
 	public Personne(String email, String name, String phoneNum) {
 		super();
-		
 		Email.set(email); 
 		Name.set(name);
 		PhoneNum.set(phoneNum);
