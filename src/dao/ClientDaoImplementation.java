@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import Controllers.LoginController;
 import Models.Client;
+import Models.Event;
 import application.DataBaseConn;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -107,6 +108,7 @@ public class ClientDaoImplementation implements ClientDao{
 	@Override
 	public void deleteClient(Client clt) throws SQLException {
 		EventDaoImplementation eventDao = new EventDaoImplementation();
+		eventDao.setCtl(clt);
 		eventDao.DelelteAllEventOfClient();
 		// TODO Auto-generated method stub
 		String query = "delete from client where idClient =?";
@@ -123,6 +125,10 @@ public class ClientDaoImplementation implements ClientDao{
 	@Override
 	public void deleteAllClientOfUser() throws SQLException {
 		// TODO Auto-generated method stub
+		ObservableList<Client> clients =getAllClients();
+		for(int i=0;i<clients.size();i++) {
+			deleteClient(clients.get(i));
+		}
 		
 	}
 
